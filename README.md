@@ -45,9 +45,15 @@ Elección del Patrón de Diseño:
 Patrón Factory: Elegimos el patrón Factory porque la vista playerCreation realiza consultas directas a la base de datos para obtener armas, lo que puede complicar la vista y hacerla menos reutilizable. Al utilizar una factory, encapsulamos la lógica de creación y obtención de armas en un solo lugar, lo que mejora la separación de preocupaciones y facilita la mantenibilidad del código.
 Mejoras Aportadas:
 
-Modularidad: La lógica para obtener armas predeterminadas se encuentra en una factory separada, lo que facilita la prueba y el mantenimiento del código.
-Reutilización: La factory WeaponFactory puede ser utilizada en otras partes del proyecto si se necesita obtener armas predeterminadas de manera similar.
-Simplicidad: La vista playerCreation es más sencilla y centrada en su tarea principal, lo que mejora la legibilidad y la gestión del código.
-Documentación de los Cambios
+##### Modularidad: 
+La lógica para obtener armas predeterminadas se encuentra en una factory separada, lo que facilita la prueba y el mantenimiento del código.
+
+##### Reutilización: 
+La factory WeaponFactory puede ser utilizada en otras partes del proyecto si se necesita obtener armas predeterminadas de manera similar.
+
+##### Simplicidad: 
+La vista playerCreation es más sencilla y centrada en su tarea principal, lo que mejora la legibilidad y la gestión del código.
+
+##### Documentación de los Cambios
 * Archivo factories.py: Añade la WeaponFactory para manejar la creación y obtención de armas.
 * Archivo views.py: Actualiza la vista playerCreation para utilizar la WeaponFactory.
