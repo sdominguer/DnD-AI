@@ -30,8 +30,8 @@ Aspectos Positivos: ¿El sistema tiene medidas adecuadas de seguridad, como cifr
 Aspectos a Mejorar: ¿Existen vulnerabilidades conocidas? ¿Qué medidas de seguridad adicionales podrían implementarse?
 Archivos a Revisar: Archivos de configuración de seguridad, código de autenticación.
 
-## Actividad 3 (Inversión de Dependencias): Escoja alguna clase de su proyecto y realice una 
-inversión de dependencia según lo visto en clase. Documente bien los cambios en el repositorio. 
+## Actividad 3 (Inversión de Dependencias): 
+Escoja alguna clase de su proyecto y realice una inversión de dependencia según lo visto en clase. Documente bien los cambios en el repositorio. 
 
 * Se hizo en models.py en la clase Weapon. 
 * Archivo repositories.py: Define la interfaz y la implementación para manejar la lógica de Weapon.
