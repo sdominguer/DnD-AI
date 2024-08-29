@@ -54,6 +54,6 @@ La factory WeaponFactory puede ser utilizada en otras partes del proyecto si se 
 ##### Simplicidad: 
 La vista playerCreation es más sencilla y centrada en su tarea principal, lo que mejora la legibilidad y la gestión del código.
 
-##### Documentación de los Cambios
+##### Documentación de los Cambios:
 * Archivo factories.py: Añade la WeaponFactory para manejar la creación y obtención de armas.
 * Archivo views.py: Actualiza la vista playerCreation para utilizar la WeaponFactory.
