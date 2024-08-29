@@ -349,7 +349,11 @@ def target_selection_by_id(monster_id):
 def action_image_generation(prompt:str, action:str, player:Character, target:Monster = None):
 
     # deprecated
+<<<<<<< HEAD
     if action == 'move':
+=======
+    if action in ['move','go']:
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
         image_description = f"{player.name}, {player.character_race} {player.character_class} {player.physical_description} running to the {prompt[4:]}"
 
     elif action == 'attack':
@@ -367,6 +371,12 @@ def action_image_generation(prompt:str, action:str, player:Character, target:Mon
     elif action == 'portal':
         image_description = f"{player.name}, the {player.character_race} {player.character_class} {player.physical_description} with a surprised face, is discovering a PORTAL with amazement"
     
+<<<<<<< HEAD
+=======
+    elif action == 'see':
+        image_description = f"{player.name}, the {player.character_race} {player.character_class} {player.physical_description} is seeing his {prompt[4:]}"
+
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     # take, use, levelup, info
     else:
         if action == 'info':
@@ -412,7 +422,11 @@ def command_executer(prompt:str|list, player:Character, target:Monster) -> tuple
     # if the prompt is a string, it will be split into a list
     action = prompt.split(' ') if type(prompt) == str else prompt
 
+<<<<<<< HEAD
     if action[0] not in ['move', 'attack', 'take']:
+=======
+    if action[0] not in ['move', 'go', 'attack', 'take', 'talk', 'help']:
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
         action_image_generation(prompt, action[0], player, target)
 
     # for each action, the turns on the campaign will be increased
@@ -448,6 +462,20 @@ def command_executer(prompt:str|list, player:Character, target:Monster) -> tuple
     elif action[0] == 'info':
         successful = act_info(player, action)
 
+<<<<<<< HEAD
+=======
+    elif action[0] == 'see':
+        successful = act_see(player, action)
+
+    elif action[0] == 'talk':
+        successful = act_talk(player, target, action)
+
+    elif action[0] == 'help':
+        from DnD_AI.functions_AI import TUTORIAL
+        History.objects.create(campaign=player.campaign, author='SYSTEM', text=TUTORIAL).save()
+        successful = True
+
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
         
     return successful, {
         'player_died': player_died,
@@ -457,6 +485,187 @@ def command_executer(prompt:str|list, player:Character, target:Monster) -> tuple
     }
 
 
+<<<<<<< HEAD
+=======
+def act_talk(player:Character, target:Monster, action:list):
+    if target is None:
+        alone_responses = [
+            "You can't talk alone.",
+            "You like talking alone, don't you?",
+            "You don't seem like someone with many friends..."
+        ]
+        response = choice(alone_responses)
+        History.objects.create(campaign=player.campaign, author='SYSTEM', text=response).save()
+        return False
+
+    if len(action) > 1:
+        try:
+            target_id = action[1]
+            if target_id.isdigit():
+                target_id = int(target_id)
+                target = target_selection_by_id(target_id)
+            else:
+                target = target_selection_by_name(target_id, player=player)
+                if target is None:
+                    possible_targets = player.get_monsters_in_range()
+                    if len(possible_targets) == 0:
+                        History.objects.create(campaign=player.campaign, author='SYSTEM', text=f"There's no monster called {target_id} in your range.").save()
+                    else:
+                        target = possible_targets[0]
+                        History.objects.create(campaign=player.campaign, author='SYSTEM', text=f"There's no monster called {target_id} in your range, talking to {target.name} instead.").save()
+        except:
+            pass
+     
+    was_understansable = False
+    if target.monster_race == player.character_race or target.monster_class == player.character_class or target.monster_race == "Human" or target.is_boss or "traductor" in player.get_inventory().keys():
+        from DnD_AI.default import understandable_responses
+        was_understansable = True
+        response = choice(understandable_responses)
+    else:    
+        number = randint(2, 20)
+        not_understandable_responses = [
+            'ra '*number,
+            'k'*number,
+            'kak '*number,
+            'la lla'*number,
+            'ajskd'*number,
+            'sdfd'*number,
+            'a'*number,
+            'A'*number,
+            'A'*number+'GGHH',
+            'AaAaaA'*number,
+            'aAAA'*number,
+            '?'*number,
+            'ñ',
+            'ñ'*number,
+            '¿?',
+            '¿?'*number,
+            '55'*number,
+            'mdr '*number,
+            'ha3'*number,
+            'UwU '*number,
+            'OwO '*number,
+            'Nyan-'*number,
+            'Nyan '*number,
+            'Nyanyame nyanyaju nyanyado no nyarabi de nyakunyaku inyanyaku nyanyahan nyanya-dai nyannyaku nyarabete nyagannyagame',
+            'w'*number, 
+            'weqeqwqewqew',
+            '哈'*number,
+            '呵'*number,
+            'ہا'*number,
+            '笑う'*number,
+            '笑い'*number,
+            '草'*number,
+            'TmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAuLi4=',
+            'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+            'https://www.youtube.com/watch?v=vVaFS739skE',
+            'gebe dich nie auf',
+            'никогда тебя не брошу',
+            '绝不会放弃你',
+            '絕對不會放棄你',
+            'あなたを決してあきらめない',
+            'नेवर गोना गिव यू अप',
+            'mai bao duoc',
+            'nigdy się nie poddawaj',
+            'tak akan menyerahkanmu',
+            'ನಿಮ್ಮನ್ನು ಎಂದಿಗೂ ಬಿಟ್ಟುಕೊಡುವುದಿಲ್ಲ',
+            'ඞ'*(number-1),
+            'ඞ',
+            'nikdy se tě nevzdám',
+            'non te deseram',
+            'nigdy cię nie opuszczę',
+            'Tôi không đời nào bỏ cậu đâu',
+            'чамд хэзээ ч бууж өгөхгүй',
+            '절대 포기하지 않을 거야 yoy',
+            'ніколі не здамся',
+            'nunca vou desistir de você',
+            'nigdy się nie poddam',
+            'երբեք չեմ հանձնվի',
+            'לעולם לא אוותר על יואי',
+            'ποτέ δεν θα τα παρατήσεις',
+            'vil aldri gi deg opp',
+            'لن تتخلى أبدا عن يو',
+            'mai te tuku iho i a koe',
+            "mana hayk'aqpas yoy up",
+            'heç vaxt təslim olmayacaq',
+            "ʻaʻole loa e hāʻawi iā ʻoe",
+            'هرگز تسلیم نخواهم شد',
+            '-. . ...- . .-. / --. --- -. -. .- / --. .. ...- . / -.-- --- ..- / ..- .--. .-.-.',
+            '-.-- --- ..- / .- .-. . / --. .- -.-- .-.-.',
+            '01101110 01100101 01110110 01100101 01110010 00100000 01100111 01101111 01101110 01101110 01100001 00100000 01100111 01101001 01110110 01100101 00100000 01111001 01101111 01110101 00100000 01110101 01110000',
+            '01111001 01101111 01110101 00100000 01100001 01110010 01100101 00100000 01100111 01100001 01111001'
+            '01110100 01101000 01100101 00100000 01100111 01100001 01101101 01100101',
+            'dGhlIGdhbWU=',
+            'bmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA=',
+            'bm8gb25lIGNhbiBlc2NhcGUgdGhlIGhlbGwu'
+        ]
+        response = choice(not_understandable_responses)
+
+
+    History.objects.create(campaign=player.campaign, author=target.name, color="red", text=response)
+
+
+    if was_understansable:
+        successful_responses = [
+            f"{target.name} is not in the mood to talk.",
+            f"{target.name} is ignoring you.",
+            f"{target.name} is too busy to talk to you.",
+            f"{target.name} is not interested in talking to you.",
+            f"{target.name} is still a monster.",
+            f"{target.name} loves you secretly.",
+            f"{target.name} knows that you will kill him.",
+            f"{target.name} feels sad.",
+            f"{target.name} is busy thinking on ways to win and save his family from you.",
+            "That was still not useful.",
+            "That was a waste of time, again.",
+            "You like wasting your time, don't you?",
+            "Go talk with people outside."
+        ]
+        response = choice(successful_responses)
+    else:
+        not_successful_responses = [
+            f"{target.name} is not a {player.character_race}",
+            f"{target.name} can't understand {player.character_race} language.",
+            f"{player.name} is not a {target.monster_race}",
+            f"{player.name} can't understand {target.monster_race} language.",
+            "You can't understand that language.",
+            'You have no traductors in your inventory.',
+            'Go find a traductor first.',
+            'You are not capable to understand that language. (loser...)',
+            'You were not capable to understand it. (loser...)',
+            "That was a waste of time.",
+            "That wasn't useful at all.",
+            "You like wasting your time, don't you?",
+        ]
+        response = choice(not_successful_responses)
+    
+    History.objects.create(campaign=player.campaign, author='SYSTEM', text=response)
+    
+    return True
+
+
+def act_see(player:Character, action:list):
+    if len(action) == 1:
+        response = player.inventory
+    elif action[1] == 'inventory':
+        response = player.inventory
+    elif action[1] in ['initial', 'story', 'initial_story']:
+        response = player.campaign.initial_story
+    elif action[1] == 'achievements':
+        response = player.campaign.achievements
+    elif action[1] == 'objectives':
+        response = player.campaign.objectives_remaining
+    elif action[1] == 'turns':
+        response = player.campaign.turns
+    elif action[1] in ['physical', 'physical_description', 'description']:
+        response = player.physical_description
+    else:
+        response = player.get_inventory(action[1])
+    History.objects.create(campaign=player.campaign, author='SYSTEM', text=response).save()
+    return True
+
+
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
 def act_info(player:Character, action:list):
     if len(action) == 1:
         response = ask_world_info_gemini(campaign_story=player.campaign.initial_story, 
@@ -531,11 +740,23 @@ def act_use(player:Character, action:list):
         successful = player.use_from_inventory(item_to_use, amount = 1)
         player.save()
         if successful:
+<<<<<<< HEAD
             random_portal = choice(Treasure.objects.filter(campaign=player.campaign, treasure_type='Portal', discovered=True))
             player.x, player.y = random_portal.x, random_portal.y
             player.save()
             History.objects.create(campaign=player.campaign, author='SYSTEM', text=f'{player.name} used a go back bone.').save()
             return True
+=======
+            try:
+                random_portal = choice(Treasure.objects.filter(campaign=player.campaign, treasure_type='Portal', discovered=True))
+                player.x, player.y = random_portal.x, random_portal.y
+                player.save()
+                History.objects.create(campaign=player.campaign, author='SYSTEM', text=f'{player.name} used a go back bone.').save()
+                return True
+            except:
+                History.objects.create(campaign=player.campaign, author='SYSTEM', text=f"There's no portals.").save()
+                return False
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
 
     #elif item_to_use == 'mana potion':, or something like that for each item
         # probably is not the best way, it would be better to be implemented on Character.use_from_inventory()
@@ -928,6 +1149,7 @@ def create_map(player:Character, characters, monsters, treasures, tiles, target:
 
 
 def place_player_on_spawn(player:Character):
+<<<<<<< HEAD
     tries = 70
     campaign_id = player.campaign.id
     spawn_tiles = Tile.objects.filter(campaign_id=campaign_id, tile_type='spawn')
@@ -937,6 +1159,39 @@ def place_player_on_spawn(player:Character):
 
         x = chosen_tile.x
         y = chosen_tile.y
+=======
+    tries = 50
+    campaign_id = player.campaign.id
+    spawn_tiles = Tile.objects.filter(campaign_id=campaign_id, tile_type='spawn')
+
+    try:
+        while tries > 0:
+            chosen_tile = choice(spawn_tiles)
+
+            x = chosen_tile.x
+            y = chosen_tile.y
+
+            existent_player = Character.objects.filter(campaign_id=campaign_id, x=x, y=y)
+            existent_treasure = Treasure.objects.filter(campaign_id=campaign_id, x=x, y=y)
+            existent_monster = Monster.objects.filter(campaign_id=campaign_id, x=x, y=y)
+            
+            if not existent_player and not existent_treasure and not existent_monster:
+                player.x = x
+                player.y = y
+                player.save()
+                return True
+            else:
+                tries -= 1
+    except:
+        History.objects.create(campaign=player.campaign, author='SYSTEM', text=f"Couldn't place {player.name} on the map. Maybe there's no map...").save()
+        return False
+        
+    # if that didn't work...
+
+    for tile in spawn_tiles:
+        x = tile.x
+        y = tile.y
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
 
         existent_player = Character.objects.filter(campaign_id=campaign_id, x=x, y=y)
         existent_treasure = Treasure.objects.filter(campaign_id=campaign_id, x=x, y=y)
@@ -946,8 +1201,11 @@ def place_player_on_spawn(player:Character):
             player.y = y
             player.save()
             return True
+<<<<<<< HEAD
         else:
             tries -= 1
+=======
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
 
     return False
 

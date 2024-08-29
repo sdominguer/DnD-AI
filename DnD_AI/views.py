@@ -27,7 +27,11 @@ def campaignSelection(request):
 
     if request.method == "POST":
         if 'create_campaign' in request.POST:
+<<<<<<< HEAD
             from .campaign_generator import generate_dungeon_map
+=======
+            from .map_creator import generate_dungeon_map
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
             name = request.POST.get('name')
             initial_story = request.POST.get('initial_story')
             size_x = int(request.POST.get('size_x'))
@@ -138,7 +142,11 @@ def playerSelection(request):
                     dexterity=dexterity,
                     physical_resistance=physical_resistance,
                     magical_resistance=magical_resistance,
+<<<<<<< HEAD
                     inventory=str({'gold': 10, 'health potion': 5}),
+=======
+                    inventory=str({'gold': 20, 'health potion': 5, 'go back bone': 3, 'key': 3}),
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
                     story=story,
                     character_race=character_race,
                     character_class=character_class,
@@ -147,10 +155,20 @@ def playerSelection(request):
                     y=0,
                 )
 
+<<<<<<< HEAD
                 place_player_on_spawn(new_player)
 
                 gift = request.POST.get('gift')
                 loot = {'gold': 50} if gift == 'gold' else {gift: 5}
+=======
+                try:
+                    place_player_on_spawn(new_player)
+                except:
+                    new_player.save()
+
+                gift = request.POST.get('gift')
+                loot = {'gold': 50} if gift == 'gold' or gift is None else {gift: 5}
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
                 new_player.add_all_to_inventory(loot)
 
                 image_description = f"{new_player.name}, a {new_player.character_race} {new_player.character_class}, {new_player.physical_description}"
@@ -278,7 +296,11 @@ def game(request):
 
                     prompt = action_interpreter(prompt)
                     command = True
+<<<<<<< HEAD
                     History.objects.create(campaign_id=campaign_id, author='ACTION', text=prompt).save()
+=======
+                    History.objects.create(campaign_id=campaign_id, author='ACTION', color='gray', text=prompt).save()
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
 
 
         # ------------------------- GETTING PLAYER AND TARGET -----------------------------

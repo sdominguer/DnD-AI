@@ -8,6 +8,9 @@ media/weapon/images/default_beta/*
 media/map/tiles_tries
 DnD_AI/pruebas
 *.env
+<<<<<<< HEAD
 *.sqlite3
 media/ilustrations/*
+=======
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
 DnD_AI/map/*

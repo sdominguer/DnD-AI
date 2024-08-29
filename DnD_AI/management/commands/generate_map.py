@@ -1,5 +1,9 @@
 from DnD_AI.models import *
+<<<<<<< HEAD
 from DnD_AI.campaign_generator import *
+=======
+from DnD_AI.map_creator import *
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
 from django.core.management.base import BaseCommand
 
 class Command(BaseCommand):

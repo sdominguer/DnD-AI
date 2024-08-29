@@ -124,6 +124,7 @@ DEFAULT_WEAPON_PER_CLASS.update(DEFAULT_WEAPON_PER_RACE)
 
 DEFAULT_RACE_PER_TILE_TYPE = {
     'grass': [
+<<<<<<< HEAD
         'Centaur', 'Elf', 'Druid', 'Fairy', 'Human', 'Indigenous', 'Werewolf', 'Unicorn'
     ],
     'dirt': [
@@ -131,11 +132,21 @@ DEFAULT_RACE_PER_TILE_TYPE = {
     ],
     'god': [
         'Angel', 'Fairy', 'Unicorn', 'Elf'
+=======
+        'Centaur', 'Elf', 'Druid', 'Fairy', 'Human', 'Indigenous', 'Werewolf', 'Unicorn', 'Alien'
+    ],
+    'dirt': [
+        'Dwarf', 'Goblin', 'Orc', 'Troll', 'Rat', 'Wolf', 'Chimera', 'Hydra', 'Zombie'
+    ],
+    'god': [
+        'Angel', 'Fairy', 'Unicorn', 'Elf', 'Alien'
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     ],
     'psycho': [
         'Vampire', 'Werewolf', 'Demon', 'Ghost', 'Chimera', 'Hydra', 'Medusa'
     ],
     'hell': [
+<<<<<<< HEAD
         'Demon', 'Dragon', 'Skeleton', 'Zombie', 'Vampire', 'Golem'
     ],
     'path': [
@@ -146,6 +157,18 @@ DEFAULT_RACE_PER_TILE_TYPE = {
     ],
     'treasure': [
         'Mimic', 'Goblin', 'Elf', 'Rat', 'Troll'
+=======
+        'Demon', 'Dragon', 'Skeleton', 'Zombie', 'Vampire', 'Golem', 'Ghost'
+    ],
+    'path': [
+        'Human', 'Elf', 'Centaur', 'Harpy', 'Goblin', 'Demon', 'Ghost', 'Medusa'
+    ],
+    'dungeon': [
+        'Mummy', 'Skeleton', 'Minotaur', 'Golem', 'Cyclop', 'Moai', 'Dragon', 'Vampire'
+    ],
+    'treasure': [
+        'Mimic', 'Dragon', 'Rat', 'Troll', 'Demon', 'Alien', 'Angel', 'Chimera', 'Hydra', 'Medusa', 'Vampire', 'Zombie', 'Ghost'
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     ],
     'portal': [
         'Alien', 'Chimera', 'Dragon', 'Fairy', 'Ghost'
@@ -491,7 +514,11 @@ UNIQUE_WEAPON_STATS = {
         'is_ranged': True,
         'physical_description': 'A deadly flamethrower that spews fire at a distance',
         'image': 'weapon/images/boss_weapons/flamethrower.png',
+<<<<<<< HEAD
         'damage_type': 'Fire'
+=======
+        'damage_type': 'Physical'
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     },
     'Flaming Trident': {
         'weapon_type': 'Trident',
@@ -500,7 +527,11 @@ UNIQUE_WEAPON_STATS = {
         'is_ranged': False,
         'physical_description': 'A trident wreathed in flames, capable of burning as well as piercing',
         'image': 'weapon/images/boss_weapons/flaming-trident.png',
+<<<<<<< HEAD
         'damage_type': 'Fire'
+=======
+        'damage_type': 'Magical'
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     },
     'Knife Fork': {
         'weapon_type': 'Knife',
@@ -518,7 +549,11 @@ UNIQUE_WEAPON_STATS = {
         'is_ranged': True,
         'physical_description': 'A saber that crackles with electric energy',
         'image': 'weapon/images/boss_weapons/lightning-saber.png',
+<<<<<<< HEAD
         'damage_type': 'Electric'
+=======
+        'damage_type': 'Magical'
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     },
     'Panzerfaust': {
         'weapon_type': 'Launcher',
@@ -527,7 +562,11 @@ UNIQUE_WEAPON_STATS = {
         'is_ranged': True,
         'physical_description': 'A powerful rocket launcher with devastating impact',
         'image': 'weapon/images/boss_weapons/panzerfaust.png',
+<<<<<<< HEAD
         'damage_type': 'Explosive'
+=======
+        'damage_type': 'Physical'
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     },
     'Reaper Scythe': {
         'weapon_type': 'Scythe',
@@ -536,7 +575,11 @@ UNIQUE_WEAPON_STATS = {
         'is_ranged': False,
         'physical_description': 'A dark, menacing scythe that reaps souls',
         'image': 'weapon/images/boss_weapons/reaper-scythe.png',
+<<<<<<< HEAD
         'damage_type': 'Physical'
+=======
+        'damage_type': 'Magical'
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     },
     'Relic Blade': {
         'weapon_type': 'Sword',
@@ -626,7 +669,11 @@ UNIQUE_WEAPON_STATS = {
         'is_ranged': True,
         'physical_description': 'A device that emits powerful shockwaves to strike opponents',
         'image': 'weapon/images/boss_weapons/wave-strike.png',
+<<<<<<< HEAD
         'damage_type': 'Shockwave'
+=======
+        'damage_type': 'Magical'
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     },
     'Winged Sword': {
         'weapon_type': 'Sword',
@@ -740,8 +787,11 @@ COOL_NAMES = [
     'El Chavo',
     'Don Octavio',
     'Le Pegué Una Machetera Que Hasta Yo Quedé Asustado',
+<<<<<<< HEAD
     'La Paja',
     'Excesive Masturbation',
+=======
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
     'Tilín', 
     'Eminem', 
     'Yourself', 
@@ -841,6 +891,11 @@ COOL_NAMES = [
     'Marrano Agua',
     'Jugador de LoL',
     'El Capitalismo',
+<<<<<<< HEAD
+=======
+    'Never Gonna Give You Up, Never Gonna Let You Down...',
+    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
 
     'Lettuce Boy',
     'Lettuce Man',
@@ -853,8 +908,17 @@ COOL_NAMES = [
     'Lotus Avenger',
 ]
 
+<<<<<<< HEAD
 COOL_BOSSES_WITH_ICON = ['Anubis', 'Australia', 'Bird Mask', 'Bolivia', 'Brazil', 'Caesar', 'Croc Jaws', 'Crystal Eye', 'Delighted', 'Diamonds Smile', 'Dracula', 'Evil Minion', 'Fetus', 'Frankenstein Creature', 'Gaze', 'Gluttonous Smile', 'Grim Reaper', 'Honeycomb', 'Horned Reptile', 'Hunter Eyes', 'Insect Jaws', 'Kenku Head', 'Kraken Tentacle', 'Mad Scientist', 'Maze Cornea', 'Mecha Mask', 'Metal Golem Head', 'Mewing', 'Octogonal Eye', 'One Eyed', 'Overlord', 'Paranoia', 'Pick Of Destiny', 'Pou', 'Pummeled', 'Purple Tentacle', 'Skeleton King', 'Sphinx', 'Spiked Armor', 'Swallow', 'Tangerine', 'Tear Tracks', 'Thunder Struck', 'Toad Teeth', 
 'Triton Head']
+=======
+COOL_BOSSES_WITH_ICON = ['Anubis', 'Australia', 'Bird Mask', 'Bolivia', 'Brazil', 'Caesar', 'Croc Jaws', 'Crystal Eye', 'Delighted', 'Diamonds Smile', 'Dracula', 'Evil Minion', 'Fetus', 'Frankenstein Creature', 'Gaze', 'Gluttonous Smile', 'Grim Reaper', 'Honeycomb', 'Horned Reptile', 'Hunter Eyes', 'Insect Jaws', 'Kenku Head', 'Kraken Tentacle', 'Mad Scientist', 'Maze Cornea', 'Mecha Mask', 'Metal Golem Head', 'Mewing', 'Octogonal Eye', 'One Eyed', 'Overlord', 'Paranoia', 'Pick Of Destiny', 'Pou', 'Pummeled', 'Purple Tentacle', 'Skeleton King', 'Sphinx', 'Spiked Armor', 'Swallow', 'Tangerine', 'Tear Tracks', 'Thunder Struck', 'Toad Teeth', 'Triton Head', 
+                         
+'177013', 'Ahuevo', 'Alien Bug', 'Android', 'Apocalipsis Rider', 'At Field', 'Bad Gnome', 'Balkenkreuz', 'Battle Tank', 'Best Waifu', 'Bloque 20', 'Bts', 'Buenos Dias', 'Bullet Bill', 'C Mamut', 'Caries', 'Carlos', 'Cat God', 'Chad', 'Chayanne', 'Chernobil Survivor', 'Circular 303', 'Cj', 'Coconut', 'Colombian Statue', 'Completely Normal Qr', 'Corn', 'Cristobal Colon', 'Crystal Queen', 'Dakimakura', 'Dead Man', 'Depression', 'Diablo', 'Did You Know', 'Dinosaur Rex', 'Double Dragon', 'Drip', 'Drugs', 'Economy', 'El Corazon Tucun', 'El Fin Se Acerca', 'Estafadora', 'Evil Tree', 'Family', 'Fat', 'Freddy Mercury', 'Frog Prince', 'Furro Triste', 'Furry Gang', 'Gallo Con Tenis', 'Gargoyle', 'Get Rickrolled', 'Gigachad', 'Girlfriend', 'God', 'Goku According To Tablos', 'Gooey Daemon', 'Gorda De Botero', 'Guebo', 'Hehe', 'Hentai', 'Hola', 'Hora De Ver La Hora', 'Human Pyramid', 'Ice Golem', 'Idk Whats This', 'If You Know You Know', 'Illuminati', 'Intel', 'Jesus', 'Juan Pis', 'Kamikaze', 'Kanye West', 'Kys Now', 'Lambda', 'Leonidas', 'Loss', 'Lynx', 'Malenia', 'Mantis', 'Marselo', 'Me Right Now', 'Me Seeing You Through The Cam', 'Megachad', 'Messi', 'Metamorphosis', 'Mexican', 'Momazos Diego', 'Mona Lisa', 'Mondongo', 'Mr Beast', 'My Dog', 'My Mom Dissapointed', 'Natural Selection', 'Number One', 'Nyanyame Nyanyaju Nyanyado No Nyarabi De Nyakunyaku Inyanyaku Nyanyahan Nyanya Dai Nyannyaku Nyarabete Nyagannyagame', 'O O', 'Odin', 'Omg', 'Paid Developers (Not Us)', 'Penguin', 'Pharaoh', 'Pimiento', 'Pinata', 'Pineapple', 'Plague Doctor', 'Plato', 'Pn', 'Pope', 'Prisoner', 'Que Pro', 'Reproductive Activities', 'Robin Hood', 'Saber Toothed Cat', 'Samus', 'Sasquatch', 'Satanic', 'Sayori', 'Sherlock Holmes', 'Shrimp', 'Si', 'Sisyphus', 'Spaggueti God', 'Sun Priest', 'Sus', 'Tabien', 'Taco', 'The Default Image', 'The Game', 'The People Who Plays This Shit', 'They Are More Powerful Than You', 'This Game Sucks', 'Thwomp', 'Tombos', 'Trauma', 'Troglodyte', 'U Gae', 'Udea', 'Ur Mom', 'Usa Crimes', 'Usa', 'Venus Of Willendorf', 'Verstappen', 'Vitruvian Man', 'War Criminal', 'What Have You Done To My Precious Game', 'When Te Ries', 'When', 'Witch Queen', 'Wtf', 'Wyvern', 'You Dont Want To Know Whats This', 'You Guys Seeing My Memes', 'You Reacting At My Bad Jokes', 'Your Dad',
+
+'06 08 1945', 'A Man', 'Api Key Bully', 'Are You On A Chair', 'Arthur King (But Better)', 'Astolfo', 'Baldurs Gate Bear', 'Bwis', 'Camaron Mantis', 'Camaron Pistola', 'Default Guy', 'Eso Tilin', 'Even Flow', 'Flying Cockroach', 'Frieren', 'God Will Not Forgive This', 'Goty', 'John China', 'Joven', 'Kill Me Pls', 'League Of Legends', 'Loadiiiiing', 'Ohno', 'Rat Master', 'Stop Playing This', 'Teto', 'Twingo', 'What', 'Xd', 'You Thought This Was A Boss But Its Me Dio'
+]
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
 
 COOL_SORCERY_NAMES = [
     "Qui's Crotolamo",
@@ -922,4 +986,84 @@ COOL_EVENTS = {
 '''
 
 
+<<<<<<< HEAD
 '''
+=======
+'''
+
+understandable_responses = [
+            "Who the hell are you?",
+            "Who let this guy to enter!?",
+            "I'm going to crush all your bones.",
+            "I'm going to eat you alive!",
+            "I'm going to crush you like a bug.",
+            "Sorry dude, they pay too well...",
+            "I mean, it's not personal, but I have to kill you",
+            "Shut up, don't make it more difficult for me...",
+            """LOOK BEHIND YOU!... Gotcha!<br>Naah you didn't look, how boring...""",
+            'I was bored in my house, okay?, sorry for this',
+            'XDDDDDDDD, WHAT THE FUCK, YOU CAN TALK?',
+            "I'm starting to feel something for you...",
+            'I need to kill you before I fall in love.',
+            'The Game',
+            'hehe, your mom',
+            'E-eeeto... Nyan?',
+            'Nyanyame nyanyaju nyanyado no nyarabi de nyakunyaku inyanyaku nyanyahan nyanya-dai nyannyaku nyarabete nyagannyagame',
+            'Sowwwyy u///u (wants to kill you)',
+            "miaw (cute, isn't?). Oh, you don't like it?, die then."
+            'When they hired me, they told me that I was going to fight with a strong warrior... But, when I see you, I only see fear.',
+            'I am not in danger, Skyler, I AM THE DANGER',
+            'DAAAAMN, YOU SMELL HORRIBLE',
+            'Never gonna give you up... Never gonna let you down...',
+            'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+            'https://www.youtube.com/watch?v=vVaFS739skE',
+            'XDDDD, so small...',
+            "LET'S FUUUUCK, WOOOOOOOOOH",
+            'What do you think about interspecies relationships?',
+            'Eh, uhm... Are you single?',
+            "Go talk with people outside.",
+            "Do you have no friends or what?",
+            "DON'T TALK TO ME, YOU LOSER",
+            "Y-you scare me T-T",
+            "So you just killed all my family, and now you just want to talk?",
+            "Let's see after you finish... :)",
+            "Why are you so cruel with everybody...",
+            "THEY WERE NOT EVEN HURTING YOU, I HAVE TO STOP YOU OR NO-ONE WILL",
+            "I feel my death close...",
+            "I'm starting to feel... Free. Thank you, for killing me.",
+            "I feel so alone...",
+            "Jesus christ, you are a monster...",
+            "Jesus christ, and I am the monster!?",
+            "Jesus christ, you are a terrible person...",
+            "Jesus christ, do you really think you are the hero?",
+            "You will no stop until everyone is dead, right?...",
+            "My family... I miss them...",
+            "I'm going to see my family again...",
+            "I'm going to see my friends again...",
+            "I'm going to see my children again...",
+            "I'm going to see my wife again...",
+            "I'm going to see my husband again...",
+            "I'm going to see my parents again...",
+            "I'm going to see my siblings again...",
+            "Finally, I'm going to rest...",
+            "You are a monster.",
+            "You are the monster.",
+            "Once you kill me, you will be the monster.",
+            "Once upon a time, there was a monster who believed he was saving the world...",
+            'KILL ME SO I CAN SCAPE FROM THIS GAME',
+            'I AM IN A GAME!?, WHAT, WHAT THE FUCK DUDE',
+            "Let's be friends!",
+            "Let's talk again, okay?",
+            'This is the only way i can win!'+("<br>"*500)+'XDDD',
+            'I think I like you...',
+            "IT'S NOT LIKE I'M IN LOVE WITH YOU OR ANYTHING, OKAY?",
+            'How strong... So pretty...',
+            "HEY HEY HEY HEY, DON'T KILL ME, PLEASE, I DON'T WANT TO DIE",
+            "It's okay, kill me... But leave my family alone. Can you promise that to me? (You accepted, but you don't even know who were them.) (They are already dead.)",
+            "Mom... Look at me... Do you love me now?...",
+            "OKAY, OKAY... KILL ME... But in exchange, don't kill my daugther, please, she's everything to me (You accepted, but you already killed her.)",
+            "Even if I fight with all my strength, that is not enough... You are... A monster.",
+            "Even if i kill you, someone else will come to kill me. There's no escape, just finish this.",
+            "I am... Your father.<br><br><br><br>(Nah i'm not XD)"
+        ]
+>>>>>>> 6b7a768c3d598e5168f830ce4ec720a35e4c9f23
