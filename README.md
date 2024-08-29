@@ -37,7 +37,7 @@ Escoja alguna clase de su proyecto y realice una inversión de dependencia segú
 * Archivo repositories.py: Define la interfaz y la implementación para manejar la lógica de Weapon.
 * Archivo models.py: Actualiza la clase Weapon para usar la interfaz IWeaponRepository.
 
-### Actividad 4
+## Actividad 4
 Se hizo en el archivo views.py.
 Proceso de Decisión
 Elección del Patrón de Diseño:
