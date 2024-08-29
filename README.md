@@ -33,4 +33,21 @@ Archivos a Revisar: Archivos de configuración de seguridad, código de autentic
 ## Actividad 3 (Inversión de Dependencias): Escoja alguna clase de su proyecto y realice una 
 inversión de dependencia según lo visto en clase. Documente bien los cambios en el repositorio. 
 
+*Se hizo en models.py en la clase Weapon. 
+*Archivo repositories.py: Define la interfaz y la implementación para manejar la lógica de Weapon.
+*Archivo models.py: Actualiza la clase Weapon para usar la interfaz IWeaponRepository.
 
+### Actividad 4
+Se hizo en el archivo views.py.
+Proceso de Decisión
+Elección del Patrón de Diseño:
+
+Patrón Factory: Elegimos el patrón Factory porque la vista playerCreation realiza consultas directas a la base de datos para obtener armas, lo que puede complicar la vista y hacerla menos reutilizable. Al utilizar una factory, encapsulamos la lógica de creación y obtención de armas en un solo lugar, lo que mejora la separación de preocupaciones y facilita la mantenibilidad del código.
+Mejoras Aportadas:
+
+Modularidad: La lógica para obtener armas predeterminadas se encuentra en una factory separada, lo que facilita la prueba y el mantenimiento del código.
+Reutilización: La factory WeaponFactory puede ser utilizada en otras partes del proyecto si se necesita obtener armas predeterminadas de manera similar.
+Simplicidad: La vista playerCreation es más sencilla y centrada en su tarea principal, lo que mejora la legibilidad y la gestión del código.
+Documentación de los Cambios
+*Archivo factories.py: Añade la WeaponFactory para manejar la creación y obtención de armas.
+*Archivo views.py: Actualiza la vista playerCreation para utilizar la WeaponFactory.
